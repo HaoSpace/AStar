@@ -5,6 +5,13 @@ public class FingerPoint : MonoBehaviour
 {
 	public Seeker PathScript;
 
+	void Awake ()
+	{
+		BoxCollider vCollider = gameObject.AddComponent<BoxCollider> ();
+
+		vCollider.size = 10 * Vector3.one;
+	}
+
 	void OnMouseDown ()
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
